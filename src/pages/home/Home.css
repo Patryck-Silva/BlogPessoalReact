@@ -1,0 +1,14 @@
+.titulo {
+  display: flex;
+  justify-content: center;
+  color: blue;
+}
+
+.imagem {
+  height: 300px;
+}
+
+.div-imagem {
+  display: flex;
+  justify-content: center;
+}
