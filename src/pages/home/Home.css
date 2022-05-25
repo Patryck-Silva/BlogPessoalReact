@@ -1,14 +1,12 @@
-.titulo {
-  display: flex;
-  justify-content: center;
-  color: blue;
+.paper {
+  background-color: antiquewhite;
 }
 
-.imagem {
-  height: 300px;
-}
-
-.div-imagem {
+.box {
   display: flex;
   justify-content: center;
+}
+
+.boxButton {
+  padding: 1rem;
 }
