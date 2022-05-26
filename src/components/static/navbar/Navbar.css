@@ -1,0 +1,15 @@
+.back {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(133deg, rgba(255, 255, 255, 1) 0%, rgba(32, 7, 36, 1) 8%, rgba(32, 7, 36, 1) 93%, rgba(255, 255, 255, 1) 100%);
+}
+
+.positionItem {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end
+}
+
+.MuiToolbar-root {
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}

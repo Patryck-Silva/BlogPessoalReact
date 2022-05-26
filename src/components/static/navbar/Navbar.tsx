@@ -1,17 +1,17 @@
+import './Navbar.css'
 import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 function Navbar() {
   return (
     <>
-      <AppBar position="static" style={{ backgroundColor: "purple" }}>
+      <AppBar position="static" className='back'>
         <Toolbar variant="dense">
           <Box style={{ cursor: "pointer" }} >
             <Typography variant="h5" color="inherit">
-              BlogPessoal
+              <img src="https://i.imgur.com/eEtlVtY.png" width="100rem" height="100rem" alt="" />
             </Typography>
           </Box>
-
-          <Box display="flex" justifyContent="start">
+          <Box className='positionItem' >
             <Box mx={1} style={{ cursor: "pointer" }}>
               <Typography variant="h6" color="inherit">
                 home
