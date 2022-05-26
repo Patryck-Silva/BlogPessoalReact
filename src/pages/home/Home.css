@@ -1,12 +1,23 @@
-.paper {
-  background-color: antiquewhite;
-}
-
-.box {
+.grid2 {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 18.75rem !important;
 }
 
-.boxButton {
-  padding: 1rem;
+.gridmaior {
+  background-image: url('https://i.imgur.com/Ziia4vx.jpg');
+  width: calc(100vw - 0.5px);
+  height: calc(100vh - 140px - 88.5px);
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.texto1 {
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }
