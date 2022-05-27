@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+.gridMaior {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridFooter {
+  background: #000 !important;
+  box-shadow: 0 8px 32px 0 rgba(231, 53, 53, 0.37) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  border-top: 1px solid rgba(231, 53, 53, 0.37) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.positionText {
+  padding-top: 1px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  color: #ecf0f1;
+  font-family: 'Amatic SC', cursive !important;
+  font-size: 28px !important;
+}
+
+.positionIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .icon {
+  padding
+} */

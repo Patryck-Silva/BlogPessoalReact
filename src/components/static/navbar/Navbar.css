@@ -1,15 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+/* cor de fundo da navbar */
 .back {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(133deg, rgba(255, 255, 255, 1) 0%, rgba(32, 7, 36, 1) 8%, rgba(32, 7, 36, 1) 93%, rgba(255, 255, 255, 1) 100%);
+  background: #000 !important;
+  box-shadow: 0 8px 32px 0 rgba(231, 53, 53, 0.37) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  border-bottom: 1px solid rgba(231, 53, 53, 0.37) !important;
 }
 
+/* Posicaos dos itens na navbar */
 .positionItem {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end
 }
 
+/* invertendo a posição dos items na navbar */
 .MuiToolbar-root {
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: row-reverse;
+}
+
+/* ajustando tamanho da imagem */
+.imagem {
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.span {
+  font-family: 'Amatic SC', cursive;
+  font-size: 28px;
+}
+
+.textItem {
+  cursor: pointer;
 }
