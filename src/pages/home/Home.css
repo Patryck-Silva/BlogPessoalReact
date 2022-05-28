@@ -20,11 +20,11 @@
   width: 309px;
   /* coloração */
   background: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 8px 20px 0 rgba(231, 53, 53, 0.37);
+  box-shadow: 0 8px 20px 0 #F894BA;
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px) !important;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid #F894BA;
   /* tamanho da box */
   height: 300px;
   /* alinhamento do texto */
@@ -47,19 +47,20 @@
 
 /* Grid da imagem */
 .grid2 {
-  width: 500px;
-  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* botao */
 .butao {
-  margin-top: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 20px 0 rgba(231, 53, 53, 0.37);
+  margin-top: 32px;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px 0 #F894BA;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid #F894BA;
 }
 
 /* Classe do botao cria pelo mui */

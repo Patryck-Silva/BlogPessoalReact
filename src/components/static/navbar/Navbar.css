@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap');
 
 /* cor de fundo da navbar */
 .back {
   background: #000 !important;
-  box-shadow: 0 8px 32px 0 rgba(231, 53, 53, 0.37) !important;
+  box-shadow: 0 8px 32px 0 #F894BA !important;
   backdrop-filter: blur(4px) !important;
   -webkit-backdrop-filter: blur(4px) !important;
-  border-bottom: 1px solid rgba(231, 53, 53, 0.37) !important;
+  border-bottom: 1px solid #F894BA !important;
 }
 
 /* Posicaos dos itens na navbar */
@@ -22,17 +23,30 @@
   flex-direction: row-reverse;
 }
 
+
+
 /* ajustando tamanho da imagem */
 .imagem {
-  width: 6.25rem;
-  height: 6.25rem;
+  width: 100px;
+  height: 100px;
 }
 
+
+/* Ajustando estilos da fonte */
 .span {
-  font-family: 'Amatic SC', cursive;
-  font-size: 28px;
+  font-family: 'Amatic SC', cursive !important;
+  font-size: 28px !important;
+  color: #fff;
 }
 
+/* quando passa o mouse fica pointrer */
 .textItem {
   cursor: pointer;
+
+}
+
+/* Deixa o link to sem sublinhado */
+.textDecorationNone {
+  text-decoration: none;
+
 }

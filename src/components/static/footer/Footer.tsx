@@ -1,5 +1,8 @@
 import React from 'react';
 import { Typography, Box, Grid } from '@material-ui/core';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import './Footer.css'
 function Footer() {
   return (
@@ -8,17 +11,17 @@ function Footer() {
         <Grid className='gridFooter' item xs={12}>
           <Box className='boxTexto'>
             <Box className='positionText' >
-              <Typography className='text' gutterBottom >Siga-me nas redes sociais </Typography>
+              <Typography className='text' gutterBottom >Siga o Dev nas redes sociais </Typography>
             </Box>
             <Box className='positionIcon'>
               <a href="https://github.com/Patryck-Silva" target="_blank" style={{ marginRight: "10px" }} rel="noreferrer">
-                <img src="https://cdn-icons-png.flaticon.com/512/214/214513.png" alt="github" width="50px" />
+                <GitHubIcon className='igIcon' fontSize='large'></GitHubIcon>
               </a>
               <a href="https://www.instagram.com/tyckupnext/" target="_blank" style={{ marginRight: "10px" }} rel="noreferrer">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="instagram" width="50px" height="50px" />
+                <InstagramIcon className='igIcon' fontSize='large'></InstagramIcon>
               </a>
               <a href="https://www.linkedin.com/in/patryck-silva/" target="_blank" rel="noreferrer" >
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="50px" height="50px" alt='linkedin' />
+                <LinkedInIcon className='igIcon' fontSize='large'></LinkedInIcon>
               </a>
             </Box>
           </Box>

@@ -7,11 +7,12 @@
 }
 
 .gridFooter {
+
   background: #000 !important;
-  box-shadow: 0 8px 32px 0 rgba(231, 53, 53, 0.37) !important;
+  box-shadow: 0 8px 32px 8px #F894BA !important;
   backdrop-filter: blur(4px) !important;
   -webkit-backdrop-filter: blur(4px) !important;
-  border-top: 1px solid rgba(231, 53, 53, 0.37) !important;
+  border-top: 1px solid #F894BA !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +37,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.igIcon {
+  color: #F894BA !important;
+  padding-bottom: 15px;
 }
 
 /* .icon {

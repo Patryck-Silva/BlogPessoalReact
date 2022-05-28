@@ -1,0 +1,9 @@
+.gridMaiorLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-decorator-nome {
+  text-decoration: none;
+}
