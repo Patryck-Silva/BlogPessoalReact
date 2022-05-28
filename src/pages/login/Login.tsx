@@ -4,33 +4,31 @@ import { Box, Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 function Login() {
   return (
-    <Grid container direction='row' justifyContent='center' alignItems='center'>
-      <Grid alignItems='center' xs={6}>
-        <Box paddingX={20}>
+    // grid da imagem da esquerda
+    <Grid container className='gridMaiorLogin'>
+      <Grid className='grid1Login' xs={12}>
+        <Box className='BoxForm'>
           <form>
-            <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' style={{ fontWeight: 'bold' }}
+            <Typography className='textoLogin'
             >Entrar</Typography>
             <TextField id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
             <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
-            <Box marginTop={2} textAlign='center'>
+            {/* box do botao */}
+            <Box textAlign='center' >
               <Link to='/home' className='text-decorator-nome'>
-                <Button type='submit' variant='contained' color='secondary'>
+                <Button className='botaoLogar' type='submit' variant='contained'>
                   Logar
                 </Button>
               </Link>
             </Box>
           </form>
-          <Box display='flex' justifyContent='center' marginTop={2}>
-            <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
+          <Box marginTop={2} >
+            <Typography className='textoSemConta'>Não tem uma conta?</Typography>
           </Box>
-          <Typography variant='subtitle1' gutterBottom align='center' style={{ fontWeight: 'bold' }}>Cadastre-se</Typography>
+          <Link to='/cadastro' className='text-decorator-nome'>
+            <Typography align='center' className='textoCadastro' style={{ fontWeight: 'bold' }}>Cadastre-se</Typography>
+          </Link>
         </Box>
-      </Grid>
-      <Grid xs={6} style={{
-        backgroundImage: `url(https://i.imgur.com/d5bMdDJ.jpg)`,
-        backgroundRepeat: 'no-repeat', width: '100vh', minHeight: '100vh', backgroundSize: 'cover', backgroundPosition: 'center'
-      }}>
-
       </Grid>
     </Grid>
   )
