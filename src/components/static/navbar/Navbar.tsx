@@ -8,9 +8,7 @@ function Navbar() {
       <AppBar position="static" className='back'>
         <Toolbar variant="dense">
           <Box className='textItem' >
-            <Typography>
-              <img src="https://i.imgur.com/BCkA1gx.png" className='imagem' alt="Tomie" title='Tomie' />
-            </Typography>
+            <img src="https://i.imgur.com/BCkA1gx.png" className='imagem' alt="Tomie" title='Tomie' />
           </Box>
           <Box className='positionItem' >
             <Box mx={1} className='textItem'>
