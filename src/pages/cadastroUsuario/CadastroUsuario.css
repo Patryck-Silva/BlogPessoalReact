@@ -1,0 +1,58 @@
+/* importando fonte */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+/* é o grid de fundo que contém os dois grids menores */
+.gridMaiorCadastro {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  height: calc(100vh - 105px - 108px);
+}
+
+/* É o grid que contém a box do */
+.grid1Cadastro {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+
+.grid2Cadastro {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* estilizando caixa de texto do usuario */
+.BoxFormCadastro {
+  background: #f5f6fa;
+  border-radius: 10px;
+  border: 2px solid #596275;
+  padding: 25px;
+  width: 500px;
+}
+
+/* estilizando textos */
+.textoEntrar {
+  color: #000;
+  text-align: center;
+  font-family: 'Amatic SC', cursive !important;
+  font-size: 40px !important;
+}
+
+.botaoCadastrar {
+  margin-top: 20px !important;
+  background-color: #F894BA !important;
+  font-family: 'Amatic SC', cursive !important;
+}
+
+.botaoCancelar {
+  margin-top: 20px !important;
+  margin-right: 20px !important;
+  background-color: #ee5253 !important;
+  font-family: 'Amatic SC', cursive !important;
+}
+
+.text-decorator-none {
+  text-decoration: none;
+}

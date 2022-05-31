@@ -74,7 +74,7 @@
 /* É o Grid maior por trás dos dois */
 .gridmaior {
   background-color: #000000;
-  height: calc(100vh - 108px - 108px);
+  height: calc(100vh - 105px - 108px);
   align-items: center;
   justify-content: center;
 }

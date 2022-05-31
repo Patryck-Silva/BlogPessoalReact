@@ -7,14 +7,16 @@
   justify-content: center;
   align-items: center;
   background-image: url('https://i.imgur.com/SrdWFQm.jpg');
-  height: calc(100vh - 108px - 108px);
+  height: calc(100vh - 105px - 108px);
 }
 
 /* é o grid da caixa de login */
 .grid1Login {
   display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* estilizando textos */
@@ -37,7 +39,7 @@
   text-align: center;
   font-family: 'Amatic SC', cursive !important;
   font-size: 25px !important;
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 /* estilizando caixa de texto do usuario */
@@ -50,7 +52,7 @@
 }
 
 /* tirar sublinhado do botao logar */
-.text-decorator-nome {
+.text-decorator-none {
   text-decoration: none;
 }
 
