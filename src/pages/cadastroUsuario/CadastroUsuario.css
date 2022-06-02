@@ -5,7 +5,7 @@
 .gridMaiorCadastro {
   display: flex;
   align-items: center;
-  background-color: #0A0A09;
+  background-color: #000;
   height: calc(100vh - 105px - 108px);
 }
 
