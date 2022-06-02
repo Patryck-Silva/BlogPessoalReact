@@ -4,7 +4,7 @@
 /* cor de fundo da navbar */
 .back {
   background: #000 !important;
-  box-shadow: 0 8px 32px 0 #F894BA !important;
+  box-shadow: 0px 3px 20px 0px #F894BA !important;
   backdrop-filter: blur(4px) !important;
   -webkit-backdrop-filter: blur(4px) !important;
   border-bottom: 1px solid #F894BA !important;

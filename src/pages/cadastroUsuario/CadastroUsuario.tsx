@@ -97,7 +97,7 @@ function CadastroUsuario() {
         </Box>
       </Grid>
       <Grid item xs={6} className='grid2Cadastro'>
-        <img src="https://cdn.discordapp.com/attachments/974010263726604389/981237270206119976/SPOILER_b0s6pP4.jpg" height='722px' alt="" />
+        <img src="https://i.imgur.com/DmMY4ho.png" width='1000px' height='722px' alt="" />
       </Grid>
     </Grid>
   )

@@ -7,29 +7,26 @@ function ListaTema() {
 
   return (
     <>
-      <Box m={2} >
-        <Card variant="outlined">
+      <Box className='backBox'>
+        <Card className='cardback'>
           <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Tema
-            </Typography>
-            <Typography variant="h5" component="h2">
+            <Typography className='textos' gutterBottom>Tema</Typography>
+            <Typography className='textos' variant="h5" component="h2">
               Minha descrição
             </Typography>
           </CardContent>
           <CardActions>
             <Box display="flex" justifyContent="center" mb={1.5} >
-
               <Link to="" className="text-decorator-none">
-                <Box mx={1}>
-                  <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                <Box >
+                  <Button variant="contained" className="botaoAtualizar" size='small'  >
                     atualizar
                   </Button>
                 </Box>
               </Link>
               <Link to="" className="text-decorator-none">
-                <Box mx={1}>
-                  <Button variant="contained" size='small' color="secondary">
+                <Box >
+                  <Button variant="contained" size='small' className='botaoDeletar'>
                     deletar
                   </Button>
                 </Box>

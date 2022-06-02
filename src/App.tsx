@@ -9,6 +9,8 @@ import Login from './pages/login/Login'
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
+import ListaTema from './components/themes/listatema/ListaTema';
+import ListaPostagem from './components/posts/listapostagens/ListaPostagem';
 function App() {
   return (
 
@@ -20,6 +22,9 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path='/cadastro' element={<CadastroUsuario />} />
+          <Route path='/posts' element={<ListaPostagem />} />
+          <Route path='/temas' element={<ListaTema />} />
+
         </Routes>
       </div>
       <Footer />
