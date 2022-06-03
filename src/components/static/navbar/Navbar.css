@@ -3,11 +3,10 @@
 
 /* cor de fundo da navbar */
 .back {
-  background: #000 !important;
-  box-shadow: 0px 3px 20px 0px #F894BA !important;
+  background: #181717 !important;
+  box-shadow: 0px 3px 20px 0px #e5989b !important;
   backdrop-filter: blur(4px) !important;
-  -webkit-backdrop-filter: blur(4px) !important;
-  border-bottom: 1px solid #F894BA !important;
+  border-bottom: 1px solid #e5989b !important;
 }
 
 /* Posicaos dos itens na navbar */
@@ -23,12 +22,12 @@
   flex-direction: row-reverse;
 }
 
-
-
 /* ajustando tamanho da imagem */
 .imagem {
   width: 100px;
   height: 100px;
+  border-radius: 72% 28% 77% 23% / 21% 78% 22% 79%;
+
 }
 
 

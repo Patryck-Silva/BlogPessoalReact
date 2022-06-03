@@ -20,11 +20,10 @@
   width: 309px;
   /* coloração */
   background: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 8px 20px 0 #F894BA;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px) !important;
+
+
   border-radius: 10px;
-  border: 1px solid #F894BA;
+  border: 1px groove #e5989b;
   /* tamanho da box */
   height: 300px;
   /* alinhamento do texto */
@@ -56,11 +55,9 @@
 .butao {
   margin-top: 32px;
   background: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 8px 20px 0 #F894BA;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+
   border-radius: 10px;
-  border: 1px solid #F894BA;
+  border: 1px solid #e5989b;
 }
 
 /* Classe do botao cria pelo mui */
@@ -73,8 +70,8 @@
 
 /* É o Grid maior por trás dos dois */
 .gridmaior {
-  background-color: #000000;
-  height: calc(100vh - 105px - 108px);
+  background-color: #181717;
+  height: calc(100vh - 108px);
   align-items: center;
   justify-content: center;
 }

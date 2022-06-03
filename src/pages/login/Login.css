@@ -44,7 +44,7 @@
 
 /* estilizando caixa de texto do usuario */
 .BoxForm {
-  background: #ffffff;
+  background: #e9ecef;
   border-radius: 10px;
   border: 2px solid #596275;
   padding: 25px;
@@ -57,6 +57,6 @@
 }
 
 .botaoLogar {
-  background-color: #F894BA !important;
+  background-color: #e5989b !important;
   font-family: 'Amatic SC', cursive !important;
 }
