@@ -36,9 +36,13 @@ export const post = async (url: any, dados: any, setDados: any, header: any) => 
 }
 
 //atualizando algo
-
 export const put = async (url: any, dados: any, setDados: any, header: any) => {
-  await api.delete(url, header)
+  const resposta = await api.put(url, dados, header)
+  setDados(resposta.data)
+}
 
+//deletando algo
+export const deleteId = async (url: any, header: any) => {
+  await api.delete(url, header)
 }
 
