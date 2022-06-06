@@ -17,15 +17,15 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  width: 309px;
+  width: 310px;
   /* coloração */
   background: rgba(0, 0, 0, 0.1);
-
-
   border-radius: 10px;
   border: 1px groove #e5989b;
+  box-shadow: 5px 5px 10px #583d3e,
+    -5px -5px 10px #e5989b !important;
   /* tamanho da box */
-  height: 300px;
+  height: 400px;
   /* alinhamento do texto */
   text-align: center;
 }
@@ -71,7 +71,7 @@
 /* É o Grid maior por trás dos dois */
 .gridmaior {
   background-color: #181717;
-  height: calc(100vh - 108px);
+  height: calc(100vh - 110px);
   align-items: center;
   justify-content: center;
 }
