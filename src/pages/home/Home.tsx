@@ -5,11 +5,7 @@ import TabPostagem from '../../components/posts/tabpostagens/TabPostagem';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Home() {
-  let navigate = useNavigate()
 
-  function botaoPosts() {
-    navigate('/posts')
-  }
 
 
   return (
@@ -23,17 +19,11 @@ function Home() {
               <img src="https://i.imgur.com/BCkA1gx.png" width='90px' height='90px' alt="" />
             </Box>
           </Box>
-          <Link to='/posts' className='text-decorator-none'>
-            <Box className='butao' onClick={botaoPosts}>
-              <Button variant="outlined" >Ver Postagens</Button>
-            </Box>
-          </Link>
         </Grid>
         <Grid item xs={6}>
           <img src="https://i.imgur.com/IYCSulH.gif" alt="" width="500px" height="500px" />
           <img src="https://i.imgur.com/IYCSulH.gif" alt="" />
         </Grid>
-
         <Grid container xs={12} >
           <TabPostagem />
         </Grid>
