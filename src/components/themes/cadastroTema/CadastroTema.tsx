@@ -18,6 +18,7 @@ function CadastroTema() {
     descricao: ''
   })
 
+  //Hook para verificar se o usuário está logado
   useEffect(() => {
     if (token === "") {
       alert("voce tem q estar logado")
@@ -25,6 +26,7 @@ function CadastroTema() {
     }
   }, [token])
 
+  //Criando função assícrona para buscar o id
   async function findById(id: string) {
     await buscaId(`/temas/${id}`, setTema, {
       headers: {
@@ -33,12 +35,14 @@ function CadastroTema() {
     })
   }
 
+  //Hook para verificar se o id é undefined
   useEffect(() => {
     if (id !== undefined) {
       findById(id)
     }
   }, [id])
 
+  //Criando função de atualizar a tabela por meio do ChangeEvent
   function updateModel(e: ChangeEvent<HTMLInputElement>) {
     setTema({
       ...tema,
@@ -46,6 +50,7 @@ function CadastroTema() {
     })
   }
 
+  //Criando a funçãoque fara toda a verificação se o id é diferente de indefinido e também atualizar o tema ou criar um novo tema caso o id seja indefinido
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
 
@@ -80,6 +85,8 @@ function CadastroTema() {
     }
     back()
   }
+
+  //Criando função de voltar para a pagina /temas independente se atualiza ou cria um tema novo
   function back() {
     history('/temas')
   }
