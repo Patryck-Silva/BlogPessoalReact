@@ -1,0 +1,17 @@
+.containerStylePost {
+  margin-top: 20px;
+  height: 100vh;
+}
+
+.formCadastroPost {
+  background: #e9ecef !important;
+  border-radius: 10px !important;
+  border: 2px solid #596275 !important;
+  padding: 25px !important;
+  width: 500px !important;
+}
+
+.buttonCadastroPost {
+  background: #181717 !important;
+  color: #ffffff !important;
+}

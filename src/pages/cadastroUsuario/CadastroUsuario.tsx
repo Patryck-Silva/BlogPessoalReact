@@ -97,7 +97,7 @@ function CadastroUsuario() {
         </Box>
       </Grid>
       <Grid item xs={6} className='grid2Cadastro'>
-        <img src="https://i.imgur.com/pPNQd0e.jpg" width='1000px' height='722px' alt="" />
+        <img src="https://i.imgur.com/CpDVqzy.png" width='1000px' height='722px' alt="" />
       </Grid>
     </Grid>
   )

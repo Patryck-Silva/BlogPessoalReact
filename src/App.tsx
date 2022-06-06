@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 import ListaTema from './components/themes/listatema/ListaTema';
 import ListaPostagem from './components/posts/listapostagens/ListaPostagem';
+import CadastroTema from './components/themes/cadastroTema/CadastroTema';
+import CadastroPost from './components/posts/cadastroPostagens/CadastroPost';
 function App() {
   return (
 
@@ -24,7 +26,10 @@ function App() {
           <Route path='/cadastro' element={<CadastroUsuario />} />
           <Route path='/posts' element={<ListaPostagem />} />
           <Route path='/temas' element={<ListaTema />} />
-
+          <Route path='/formulariopostagem' element={<CadastroPost />} />
+          <Route path='/formulariopostagem/:id' element={<CadastroPost />} />
+          <Route path='/formulariotema' element={<CadastroTema />} />
+          <Route path='/formulariotema/:id' element={<CadastroTema />} />
         </Routes>
       </div>
       <Footer />

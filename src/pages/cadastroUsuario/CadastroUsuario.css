@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   background-color: #181717;
-  height: calc(100vh - 105px - 108px);
+  height: calc(100vh - 105px - 75px);
 }
 
 /* É o grid que contém a box do */
@@ -45,6 +45,15 @@
   background-color: #e5989b !important;
   font-family: 'Amatic SC', cursive !important;
   text-decoration: none;
+  transition: all 0.5s !important;
+}
+
+.botaoCadastrar:hover {
+  box-shadow:
+    3px -3px 0px #000000;
+  -webkit-transform: translateX(6px);
+  transform: translateX(6px);
+
 }
 
 .botaoCancelar {
@@ -52,6 +61,16 @@
   margin-right: 20px !important;
   background-color: #ee5253 !important;
   font-family: 'Amatic SC', cursive !important;
+  transition: all 0.5s !important;
+}
+
+.botaoCancelar:hover {
+  box-shadow:
+    -3px -3px 0px #000,
+    -3px -3px 0px #000 !important;
+  -webkit-transform: translateX(6px) !important;
+  transform: translateX(6px) !important;
+
 }
 
 .text-decorator-none {

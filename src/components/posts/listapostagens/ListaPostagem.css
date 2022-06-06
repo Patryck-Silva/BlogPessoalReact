@@ -1,3 +1,24 @@
 .text-decorator-none {
   text-decoration: none;
 }
+
+.textosCard {
+  color: #fff;
+}
+
+.botaoBox {
+  display: flex;
+  justify-content: center;
+}
+
+.cardBackHome {
+  border-radius: 18px !important;
+  background: #181717 !important;
+  border: 1px solid #e5989b !important;
+}
+
+.botaoPosts {
+  border: 1px solid #e5989b !important;
+  background: #181717 !important;
+  color: #ffffff !important;
+}

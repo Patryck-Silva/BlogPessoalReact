@@ -1,0 +1,12 @@
+.titulo {
+  color: #f0eeee !important;
+}
+
+.MuiGrid-grid-xs-12 {
+  justify-content: center;
+}
+
+.header {
+  background-color: #e5989b;
+  color: #000;
+}

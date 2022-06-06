@@ -27,7 +27,16 @@
   width: 100px;
   height: 100px;
   border-radius: 72% 28% 77% 23% / 21% 78% 22% 79%;
+  transition: all 0.5s;
+}
 
+.imagem:hover {
+  opacity: 0.3;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
 }
 
 
@@ -36,6 +45,17 @@
   font-family: 'Amatic SC', cursive !important;
   font-size: 28px !important;
   color: #fff;
+}
+
+.span:hover {
+  color: #e5989b;
+}
+
+.textItem:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+
 }
 
 /* quando passa o mouse fica pointrer */

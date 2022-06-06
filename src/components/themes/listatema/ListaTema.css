@@ -7,14 +7,13 @@ body {
 }
 
 .backBox {
-  height: calc(100vh - 106px - 107px);
+  height: 100vh;
   padding-left: 50px;
   background-repeat: no-repeat;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row !important;
-
 }
 
 .cardback {
@@ -36,10 +35,9 @@ body {
   text-decoration: none;
 }
 
-.botaoAtualizar {
+.botaoAtualizarTema {
   background: #181717 !important;
-
-
+  color: #ffffff !important;
 }
 
 .botaoDeletar {
