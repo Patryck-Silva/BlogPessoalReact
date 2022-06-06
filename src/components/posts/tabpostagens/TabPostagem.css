@@ -2,11 +2,12 @@
   color: #f0eeee !important;
 }
 
-.MuiGrid-grid-xs-12 {
-  justify-content: center;
+.tabText {
+  font-size: 16px !important;
+  font-weight: bold !important;
 }
 
 .header {
-  background-color: #e5989b;
+  background-color: #a17b7d;
   color: #000;
 }
