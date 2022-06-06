@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   background-image: url('https://i.imgur.com/SrdWFQm.jpg');
-  height: calc(100vh - 105px - 75px);
+  height: calc(100vh - 105px - 55px);
 }
 
 /* é o grid da caixa de login */
