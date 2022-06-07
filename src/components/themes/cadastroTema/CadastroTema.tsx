@@ -1,17 +1,20 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Button, Container, TextField, Typography } from '@material-ui/core'
+import { Box, Button, Container, Grid, TextField, Typography } from '@material-ui/core'
 import { useNavigate, useParams } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage'
 import './CadastroTema.css'
 import Tema from '../../../models/Tema'
 import { buscaId, post, put } from '../../../services/Service'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/tokensReducer'
 
 function CadastroTema() {
   let history = useNavigate()
 
   const { id } = useParams<{ id: string }>()
 
-  const [token, setToken] = useLocalStorage('token')
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  )
 
   const [tema, setTema] = useState<Tema>({
     id: 0,
@@ -93,24 +96,28 @@ function CadastroTema() {
 
   return (
 
-    <Container maxWidth="sm" className='containerStyleTema' >
-      <form onSubmit={onSubmit} className='formCadastroTema'>
-        <Typography variant="h3" align="center" >Formulário de cadastro tema</Typography>
-        <TextField
-          value={tema.descricao}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)}
-          id="descricao"
-          label="descrição"
-          variant="outlined"
-          name="descricao"
-          margin="normal"
-          fullWidth
-        />
-        <Button type="submit" variant="contained" className='buttonCadastroTema'>
-          Finalizar
-        </Button>
-      </form>
-    </Container>
+    <Grid container >
+      <Grid xs={12} className='GridBackground' >
+        <Container maxWidth="sm" className='containerStyleTema' >
+          <form onSubmit={onSubmit} className='formCadastroTema'>
+            <Typography variant="h3" align="center" >Formulário de cadastro tema</Typography>
+            <TextField
+              value={tema.descricao}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)}
+              id="descricao"
+              label="descrição"
+              variant="outlined"
+              name="descricao"
+              margin="normal"
+              fullWidth
+            />
+            <Button type="submit" variant="contained" className='buttonCadastroTema'>
+              Finalizar
+            </Button>
+          </form>
+        </Container>
+      </Grid>
+    </Grid>
   )
 }
 

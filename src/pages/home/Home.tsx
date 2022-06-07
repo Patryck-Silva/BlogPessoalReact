@@ -3,12 +3,16 @@ import { Typography, Box, Grid, Button } from '@material-ui/core';
 import './Home.css';
 import TabPostagem from '../../components/posts/tabpostagens/TabPostagem';
 import { Link, useNavigate } from 'react-router-dom';
-import ModalPost from '../../components/posts/modalPostagens/ModalPost';
-import useLocalStorage from 'react-use-localstorage';
+// import ModalPost from '../../components/posts/modalPostagens/ModalPost';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokensReducer';
 
 function Home() {
   const navigate = useNavigate()
-  const [token, setToken] = useLocalStorage('token')
+
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  )
   useEffect(() => {
     if (token === "") {
       alert('Você precisa estar logado para continuar.')

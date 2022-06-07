@@ -1,17 +1,20 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
+import { Box, Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText, Grid } from "@material-ui/core"
 import './CadastroPost.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Tema from '../../../models/Tema';
-import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import './CadastroPost.css'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 function CadastroPost() {
   let navigate = useNavigate()
   const { id } = useParams<{ id: string }>()
   const [temas, setTemas] = useState<Tema[]>([])
-  const [token, setToken] = useLocalStorage('token')
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  )
 
   useEffect(() => {
     if (token === "") {
@@ -108,34 +111,38 @@ function CadastroPost() {
 
 
   return (
-    <Container maxWidth="sm" className='containerStylePost'>
-      <form className='formCadastroPost' onSubmit={onSubmit} >
-        <Typography variant="h3" align="center" >Formulário de cadastro postagem</Typography>
-        <TextField value={posts.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-        <TextField value={posts.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-        <FormControl >
-          <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
-          <Select
-            labelId="demo-simple-select-helper-label"
-            id="demo-simple-select-helper"
-            onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
-              headers: {
-                'Authorization': token
-              }
-            })}>
-            {
-              temas.map(item => (
-                <MenuItem value={item.id}>{item.descricao}</MenuItem>
-              ))
-            }
-          </Select>
-          <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" variant="contained" color="primary" className='buttonCadastroPost'>
-            Finalizar
-          </Button>
-        </FormControl>
-      </form>
-    </Container>
+    <Grid container >
+      <Grid xs={12} className='GridBackCadastroPost'>
+        <Container maxWidth="sm" className='containerStylePost'>
+          <form className='formCadastroPost' onSubmit={onSubmit} >
+            <Typography variant="h3" align="center" >Formulário de criação de uma postagem</Typography>
+            <TextField value={posts.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
+            <TextField value={posts.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+            <FormControl >
+              <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+              <Select
+                labelId="demo-simple-select-helper-label"
+                id="demo-simple-select-helper"
+                onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
+                  headers: {
+                    'Authorization': token
+                  }
+                })}>
+                {
+                  temas.map(item => (
+                    <MenuItem value={item.id}>{item.descricao}</MenuItem>
+                  ))
+                }
+              </Select>
+              <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+              <Button type="submit" variant="contained" color="primary" className='buttonCadastroPost'>
+                Finalizar
+              </Button>
+            </FormControl>
+          </form>
+        </Container>
+      </Grid>
+    </Grid>
   )
 }
 export default CadastroPost;

@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
-import { Box, Card, CardActions, CardContent, Button, Typography, IconButton } from '@material-ui/core';
+import { Link, useNavigate } from 'react-router-dom'
+import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import './ListaPostagem.css';
-
-import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
-import { busca, buscaId, put } from '../../../services/Service';
+import { busca, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
-  const [token, setToken] = useLocalStorage('token');
+
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  )
+
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -54,7 +58,7 @@ function ListaPostagem() {
             <Card variant="outlined" className='cardBackHome'>
               <CardContent>
                 <Typography className="subtitulo" gutterBottom>
-                  Postagens
+                  Postagens:
                 </Typography>
                 <Typography className='textosCard' variant="h5" component="h2">
                   {post.titulo}
@@ -89,7 +93,8 @@ function ListaPostagem() {
                     </Box>
                   </Link>
                   <Box mx={1}>
-                    <Button onClick={() => { curtidas(post.id) }} ><ThumbUpIcon color='primary'></ThumbUpIcon><Typography style={{ color: 'black' }} align='center' variant="body2" component="p"> {post.curtir}</Typography></Button>
+                    <Button onClick={() => { curtidas(post.id) }} ><ThumbUpIcon color='primary'></ThumbUpIcon></Button>
+                    <Typography style={{ color: 'black' }} align='center' variant="body2" component="p"> {post.curtir}</Typography>
                   </Box>
                 </Box>
               </CardActions>

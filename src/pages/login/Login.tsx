@@ -2,16 +2,17 @@ import React, { ChangeEvent, useState, useEffect } from 'react'
 import './Login.css'
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/actions';
 function Login() {
 
   //criando a variavel do tipo useNavigate para redirecionar
   let navigate = useNavigate()
-
+  const dispatch = useDispatch()
   // o colchete é parte da sintaxe deve ser escrito assim, e o useLocalStorage serve para criar o token a partir do momento que nunca foi feito login.
-  const [token, setToken] = useLocalStorage('token')
+  const [token, setToken] = useState('')
   // userLogin = estado do meu componente(primeiro valor para acessar a informação do state), setUserLogin = funcao para alterar a informção do state. useState<Tipo>({Parametros, propriedades inicializadas com vazio})
   const [userLogin, setUserLogin] = useState<UserLogin>(
     {
@@ -53,6 +54,8 @@ function Login() {
   useEffect(() => {
     // if que verifica se o token está vazio ou nao,
     if (token !== "") {
+      //adiciona o token no dispatch
+      dispatch(addToken(token))
       //fazendo redirecionamento, aciono a variavel que contém o useNavigate indicando a rota que ele tem q ir '/home'
       navigate('/home')
     }

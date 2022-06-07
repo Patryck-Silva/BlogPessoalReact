@@ -9,13 +9,9 @@ body {
 
 
 .backBox {
-  height: calc(100vh - 105px - 55px);
   padding-left: 50px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: row !important;
-  flex-wrap: nowrap;
+
+
 }
 
 .cardback {

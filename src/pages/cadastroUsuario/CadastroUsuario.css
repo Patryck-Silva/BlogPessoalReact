@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   background-color: #181717;
-  height: calc(100vh - 105px - 55px);
+  height: 100vh;
 }
 
 /* É o grid que contém a box do */

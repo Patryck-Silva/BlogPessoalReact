@@ -7,7 +7,9 @@
   justify-content: center;
   align-items: center;
   background-image: url('https://i.imgur.com/SrdWFQm.jpg');
-  height: calc(100vh - 105px - 55px);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* é o grid da caixa de login */

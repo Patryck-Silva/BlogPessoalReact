@@ -13,7 +13,6 @@
 }
 
 .backBoxPosts {
-  height: calc(100vh - 105px - 55px);
   padding-left: 50px;
   display: flex;
   justify-content: flex-start;
@@ -26,7 +25,6 @@
 .botaoBox {
   display: flex;
   justify-content: center;
-
 }
 
 .cardBackHome {
@@ -34,8 +32,10 @@
   background: #e0e0e0 !important;
   box-shadow: 5px 5px 10px #5a5a5a,
     -5px -5px 10px #ffffff !important;
+  border: 1px solid #181717 !important;
   margin-top: 30px !important;
   margin-right: 50px;
+  width: 100vw;
 }
 
 .botaoPosts {

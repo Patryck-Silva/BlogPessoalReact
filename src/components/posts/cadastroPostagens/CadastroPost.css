@@ -1,3 +1,7 @@
+.GridBackCadastroPost {
+  background-image: url('https://i.imgur.com/wXZMg1B.png');
+}
+
 .containerStylePost {
   margin-top: 20px;
   height: calc(100vh - 125px - 55px);
@@ -14,4 +18,8 @@
 .buttonCadastroPost {
   background: #181717 !important;
   color: #ffffff !important;
+}
+
+.boxImage {
+  padding-left: 40px;
 }
