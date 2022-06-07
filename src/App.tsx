@@ -20,8 +20,11 @@ function App() {
 
     <Router>
       <Navbar />
-      <div>
+      <div /*style={{ minHeight: '100vh' }}*/>
         <Routes>
+          {/* Login: height: calc(100vh - 105px - 55px); */}
+          {/* home: height: calc(100vh - 110px); */}
+          {/* cadastrousuario  height: calc(100vh - 105px - 55px); */}
           <Route path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
           <Route path="/home" element={<Home />} />

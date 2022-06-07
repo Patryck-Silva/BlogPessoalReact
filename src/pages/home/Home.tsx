@@ -28,7 +28,11 @@ function Home() {
             </Box>
           </Box>
           <Box >
-            <ModalPost />
+            {/* <ModalPost /> */}
+            <Link to='/formulariopostagem' className='text-decorator-none'><Button className='butao'>Criar nova postagem</Button></Link>
+          </Box> <Box >
+            {/* <ModalPost /> */}
+            <Link to='/posts' className='text-decorator-none'><Button className='butao'>Ver Postagens</Button></Link>
           </Box>
         </Grid>
         <Grid item xs={6}>

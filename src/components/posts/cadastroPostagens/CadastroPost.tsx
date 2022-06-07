@@ -42,16 +42,16 @@ function CadastroPost() {
 
   async function getTemas() {
     await busca('/temas', setTemas, {
-      Headers: {
+      headers: {
         'Authorization': token
       }
     })
   }
 
   async function findPostagensById(id: string) {
-    await buscaId(`/posts/${id}`, setPosts, {
-      Headers: {
-        'Authorization': "token"
+    await buscaId(`/postagens/${id}`, setPosts, {
+      headers: {
+        'Authorization': token
       }
     })
   }
@@ -75,7 +75,7 @@ function CadastroPost() {
 
     if (id !== undefined) {
       try {
-        await put(`/posts`, posts, setPosts, {
+        await put(`/postagens`, posts, setPosts, {
           headers: {
             'Authorization': token
           }
@@ -87,8 +87,8 @@ function CadastroPost() {
       }
     } else {
       try {
-        await post(`/posts`, posts, setPosts, {
-          Headers: {
+        await post(`/postagens`, posts, setPosts, {
+          headers: {
             'Authorization': token
           }
         })
@@ -101,13 +101,6 @@ function CadastroPost() {
     back()
   }
 
-  // async function curtirPostagem(){
-  //   await curtir(`/posts/${id}`,curtida,setCurtida,{
-  //     Headers:{
-  //       'Authorization':token
-  //     }
-  //   })
-  // }
 
   function back() {
     navigate('/posts')
@@ -125,7 +118,7 @@ function CadastroPost() {
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
-            onChange={(e) => buscaId(`/tema/${e.target.value}`, setTema, {
+            onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
               headers: {
                 'Authorization': token
               }

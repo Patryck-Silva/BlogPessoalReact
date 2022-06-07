@@ -67,7 +67,7 @@ function CadastroTema() {
       } catch (error) {// CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
         console.log(`Error:${error}`);
 
-        alert("Error, por favor verifique a quantidade de caracteres. ")
+        alert("Erro na atualização de postagem, verifique os campos e tente novamente.")
       }
     } else { // Se o ID for indefinido, tente Cadastrar
       // TRY: Tenta executar o cadastro
@@ -80,7 +80,7 @@ function CadastroTema() {
         alert('Tema criado com sucesso')
       } catch (error) {// CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
         console.log(`Error: ${error}`)
-        alert("Erro, por favor verifique a quantidade minima de caracteres")
+        alert("Erro na criação de postagem, verifique os campos e tente novamente.")
       }
     }
     back()

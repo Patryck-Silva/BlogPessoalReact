@@ -61,7 +61,10 @@ function Login() {
   return (
 
     <Grid container className='gridMaiorLogin'>
-      <Grid className='grid1Login' xs={12}>
+      {/* <Grid xs={4}>
+        <img src="https://i.imgur.com/dyl7cE2.png" alt="" />
+      </Grid> */}
+      <Grid className='gridFormLogin' xs={6}>
         <Box className='BoxForm'>
           {/* invocando a function de logar, quando clicar no botao de logar ela será chamada */}
           <form onSubmit={logar}>
@@ -82,6 +85,9 @@ function Login() {
           </Link>
         </Box>
       </Grid>
+      {/* <Grid xs={6}>
+        <img src="https://i.imgur.com/NFzCsD0.png" width='500px' height='722px' alt="" />
+      </Grid> */}
     </Grid>
   )
 }

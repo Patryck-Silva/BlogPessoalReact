@@ -46,8 +46,4 @@ export const deleteId = async (url: any, header: any) => {
   await api.delete(url, header)
 }
 
-//curtindo postagem
-export const curtir = async (url: any, curtida: any, setCurtida: any, header: any) => {
-  const resposta = await api.put(url, curtida, header)
-  setCurtida(resposta.data.curtir)
-}
+
