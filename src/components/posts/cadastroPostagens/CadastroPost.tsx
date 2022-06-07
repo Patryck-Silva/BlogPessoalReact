@@ -8,21 +8,136 @@ import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import './CadastroPost.css'
 function CadastroPost() {
+  let navigate = useNavigate()
+  const { id } = useParams<{ id: string }>()
+  const [temas, setTemas] = useState<Tema[]>([])
+  const [token, setToken] = useLocalStorage('token')
+
+  useEffect(() => {
+    if (token === "") {
+      alert("Você precisa estar logado para completar a ação!")
+    }
+  }, [token])
+
+  const [tema, setTema] = useState<Tema>({
+    id: 0,
+    descricao: ''
+  })
+
+  const [posts, setPosts] = useState<Postagem>({
+    id: 0,
+    titulo: "",
+    data: '',
+    texto: '',
+    curtir: 0,
+    tema: null
+  })
+
+  useEffect(() => {
+    setPosts({
+      ...posts,
+      tema: tema
+    })
+  }, [tema])
+
+  async function getTemas() {
+    await busca('/temas', setTemas, {
+      Headers: {
+        'Authorization': token
+      }
+    })
+  }
+
+  async function findPostagensById(id: string) {
+    await buscaId(`/posts/${id}`, setPosts, {
+      Headers: {
+        'Authorization': "token"
+      }
+    })
+  }
+
+  useEffect(() => {
+    getTemas()
+    if (id !== undefined) {
+      findPostagensById(id)
+    }
+  }, [id])
+
+  function updatedPostagem(e: ChangeEvent<HTMLInputElement>) {
+    setPosts({
+      ...posts,
+      [e.target.name]: e.target.value,
+      tema: tema
+    })
+  }
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
+
+    if (id !== undefined) {
+      try {
+        await put(`/posts`, posts, setPosts, {
+          headers: {
+            'Authorization': token
+          }
+        })
+        alert("Postagem atualizada com sucesso")
+      } catch (error) {
+        console.log(`Erro: ${error}`);
+        alert("Ocorreu algum erro ao atualizar uma psotagem, verifique os campos e tente novamente!")
+      }
+    } else {
+      try {
+        await post(`/posts`, posts, setPosts, {
+          Headers: {
+            'Authorization': token
+          }
+        })
+        alert("Postagem Criada com sucesso")
+      } catch (error) {
+        console.log(`Error: ${error}`);
+        alert("Ocorreu algum erro ao criar uma postagem, verifique os campos e tente novamente!")
+      }
+    }
+    back()
+  }
+
+  // async function curtirPostagem(){
+  //   await curtir(`/posts/${id}`,curtida,setCurtida,{
+  //     Headers:{
+  //       'Authorization':token
+  //     }
+  //   })
+  // }
+
+  function back() {
+    navigate('/posts')
+  }
+
 
   return (
     <Container maxWidth="sm" className='containerStylePost'>
-      <form className='formCadastroPost' >
+      <form className='formCadastroPost' onSubmit={onSubmit} >
         <Typography variant="h3" align="center" >Formulário de cadastro postagem</Typography>
-        <TextField id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-        <TextField id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-        <FormControl>
+        <TextField value={posts.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
+        <TextField value={posts.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+        <FormControl >
           <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
-            id="demo-simple-select-helper">
+            id="demo-simple-select-helper"
+            onChange={(e) => buscaId(`/tema/${e.target.value}`, setTema, {
+              headers: {
+                'Authorization': token
+              }
+            })}>
+            {
+              temas.map(item => (
+                <MenuItem value={item.id}>{item.descricao}</MenuItem>
+              ))
+            }
           </Select>
           <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" variant="contained" className='buttonCadastroPost'>
+          <Button type="submit" variant="contained" color="primary" className='buttonCadastroPost'>
             Finalizar
           </Button>
         </FormControl>

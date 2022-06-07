@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import './ListaPostagem.css';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
-import { busca } from '../../../services/Service';
+import { busca, buscaId, curtir } from '../../../services/Service';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -26,12 +26,13 @@ function ListaPostagem() {
       }
     })
   }
-
   useEffect(() => {
-
     getPost()
-
   }, [posts.length])
+
+
+
+
   return (
     <>
       {
@@ -68,6 +69,11 @@ function ListaPostagem() {
                       </Button>
                     </Box>
                   </Link>
+                  <Box mx={1}>
+                    <Button variant="contained" size='small' className='botaoPosts'>
+                      curtir
+                    </Button>
+                  </Box>
                 </Box>
               </CardActions>
             </Card>
