@@ -6,6 +6,7 @@ import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import { useDispatch } from 'react-redux';
 import { addToken } from '../../store/tokens/actions';
+import { toast } from 'react-toastify'
 function Login() {
 
   //criando a variavel do tipo useNavigate para redirecionar
@@ -44,10 +45,30 @@ function Login() {
     try {
       // apenas trazendo o método login da service, com os 3 parametros (rota,dados, e a function setToken no qual o token é gravado no localStorage)
       await login(`/usuarios/logar`, userLogin, setToken)
-      alert('Usuário logado com sucesso!')
+      toast.success('Usuário logado com sucesso!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+
+      });
     } catch (error) {
 
-      alert('Dados inconsistentes. Erro ao logar!')
+      toast.error('Seu usuário ou senha estão incorretos', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+
+      });
     }
   }
   //responsavel por fazer o controle do ciclo de vida de um componente,tem dois parametros: function que verifica se o token é !== de vazio, e o segundo parametro token. Se tem um token armazenado, ele cai dentro do if.

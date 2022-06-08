@@ -6,7 +6,7 @@ import Tema from '../../../models/Tema'
 import { buscaId, post, put } from '../../../services/Service'
 import { useSelector } from 'react-redux'
 import { TokenState } from '../../../store/tokens/tokensReducer'
-
+import { toast } from 'react-toastify'
 function CadastroTema() {
   let history = useNavigate()
 
@@ -24,7 +24,17 @@ function CadastroTema() {
   //Hook para verificar se o usuário está logado
   useEffect(() => {
     if (token === "") {
-      alert("voce tem q estar logado")
+      toast.error('Você precisa estar logado para completar a ação', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+
+      });
       history("/login")
     }
   }, [token])
@@ -66,11 +76,31 @@ function CadastroTema() {
             'Authorization': token
           }
         })
-        alert("Tema atualizado com sucesso")
+        toast.success('Tema atualizado com sucesso', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+
+        });
       } catch (error) {// CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
         console.log(`Error:${error}`);
 
-        alert("Erro na atualização de postagem, verifique os campos e tente novamente.")
+        toast.error('Erro na atualização do tema, verifique os campos e tente novamente.', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+
+        });
       }
     } else { // Se o ID for indefinido, tente Cadastrar
       // TRY: Tenta executar o cadastro
@@ -80,10 +110,30 @@ function CadastroTema() {
             'Authorization': token
           }
         })
-        alert('Tema criado com sucesso')
+        toast.success('Tema criado com sucesso', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+
+        });
       } catch (error) {// CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
         console.log(`Error: ${error}`)
-        alert("Erro na criação de postagem, verifique os campos e tente novamente.")
+        toast.error('Erro na criação do tema,verifique os campos e tente novamente.', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+
+        });
       }
     }
     back()

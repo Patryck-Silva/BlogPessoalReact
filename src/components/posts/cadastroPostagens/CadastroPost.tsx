@@ -8,6 +8,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import './CadastroPost.css'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify'
 function CadastroPost() {
   let navigate = useNavigate()
   const { id } = useParams<{ id: string }>()
@@ -18,7 +19,17 @@ function CadastroPost() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado para completar a ação!")
+      toast.error('Você precisa estar logado para completar a ação', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+
+      });
     }
   }, [token])
 
@@ -83,10 +94,29 @@ function CadastroPost() {
             'Authorization': token
           }
         })
-        alert("Postagem atualizada com sucesso")
+        toast.success('Postagem atualizada com sucesso', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+
+        });
       } catch (error) {
         console.log(`Erro: ${error}`);
-        alert("Ocorreu algum erro ao atualizar uma psotagem, verifique os campos e tente novamente!")
+        toast.error('Ocorreu algum erro ao atualizar a postagem, verifique os campos e tente novamente! ', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+        });
       }
     } else {
       try {
@@ -95,10 +125,30 @@ function CadastroPost() {
             'Authorization': token
           }
         })
-        alert("Postagem Criada com sucesso")
+        toast.success('Postagem criada com sucesso!', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+
+        });
       } catch (error) {
         console.log(`Error: ${error}`);
-        alert("Ocorreu algum erro ao criar uma postagem, verifique os campos e tente novamente!")
+        toast.error('Ocorreu algum erro ao criar uma postagem, verifique os campos e tente novamente! ', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+
+        });
       }
     }
     back()

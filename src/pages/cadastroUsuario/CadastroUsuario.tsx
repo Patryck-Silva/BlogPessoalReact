@@ -4,6 +4,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import './CadastroUsuario.css'
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
+import { toast } from 'react-toastify'
 function CadastroUsuario() {
 
   //criando a variavel do tipo useNavigate para redirecionar
@@ -57,14 +58,44 @@ function CadastroUsuario() {
     if (confirmarSenha === user.senha && user.senha.length >= 8) {
       try {
         await cadastroUsuario('/usuarios/cadastrar', user, setUserResult)
-        alert('Usuario cadastrado com sucesso')
+        toast.success('Usuário cadastrado com sucesso', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+
+        });
       } catch (error) {
         console.log(`erro: ${error}`);
 
-        alert('usuario já existente')
+        toast.error('Usuário já existente.', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+
+        });
       }
     } else {
-      alert('Insira uma senha com no mínimo 8 digitos')
+      toast.warning('Insira uma senha com no mínimo 8 dígitos', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+
+      });
       setUser({ ...user, senha: "" })
       setConfirmarSenha("")
     }

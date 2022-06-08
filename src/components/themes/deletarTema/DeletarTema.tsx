@@ -1,12 +1,13 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Box, Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
 import './DeletarTema.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+
 import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../models/Tema';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify'
 function DeletarTema() {
   let navigate = useNavigate()
   const { id } = useParams<{ id: string }>()
@@ -17,7 +18,17 @@ function DeletarTema() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar Logado')
+      toast.error('Você precisa estar logado para completar a ação', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+
+      });
       navigate('/login')
     }
   }, [token])
@@ -42,7 +53,17 @@ function DeletarTema() {
         'Authorization': token
       }
     })
-    alert('Tema excluído com sucesso')
+    toast.success('Tema excluído com sucesso', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "colored",
+
+    });
   }
   function nao() {
     navigate('/temas')
@@ -51,26 +72,28 @@ function DeletarTema() {
 
   return (
     <>
-      <Box m={2}>
-        <Card variant='outlined'>
-          <CardContent>
-            <Box justifyContent='center'>
-              <Typography color='textSecondary' gutterBottom>Deseja deletar o tema?</Typography>
-              <Typography color='textSecondary'>{tema?.descricao}</Typography>
-            </Box>
-          </CardContent>
-          <CardActions>
-            <Box display='flex' justifyContent='start' ml={1.0} mb={2}>
-              <Box mx={2}>
-                <Button variant='contained' className='' size='large' color='primary' onClick={sim}>Sim</Button>
+      <Grid xs={12} className='gridDeleteTema'>
+        <Box >
+          <Card className='cardbackDeleteTema'>
+            <CardContent>
+              <Box justifyContent='center'>
+                <Typography className='textosDelete' gutterBottom>Deseja deletar o tema?</Typography>
+                <Typography className='textosDelete'>{tema?.descricao}</Typography>
               </Box>
-              <Box mx={2}>
-                <Button variant='contained' className='' size='large' color='secondary' onClick={nao}>Não</Button>
+            </CardContent>
+            <CardActions>
+              <Box display='flex' justifyContent='start' ml={1.0} mb={2}>
+                <Box mx={2}>
+                  <Button variant='contained' className='botaoDeleteTema' size='large' color='primary' onClick={sim}>Sim</Button>
+                </Box>
+                <Box mx={2}>
+                  <Button variant='contained' className='botaoDeleteTema' size='large' color='secondary' onClick={nao}>Não</Button>
+                </Box>
               </Box>
-            </Box>
-          </CardActions>
-        </Card>
-      </Box>
+            </CardActions>
+          </Card>
+        </Box>
+      </Grid>
     </>
   )
 }

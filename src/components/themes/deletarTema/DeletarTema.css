@@ -1,0 +1,27 @@
+.gridDeleteTema {
+  height: calc(100vh - 105px - 55px);
+  padding-left: 30px !important;
+
+}
+
+
+
+.cardbackDeleteTema {
+  border-radius: 18px !important;
+  background: #e0e0e0 !important;
+  box-shadow: 5px 5px 10px #5a5a5a,
+    -5px -5px 10px #ffffff !important;
+  margin-top: 30px !important;
+  margin-right: 50px;
+
+}
+
+.textosDelete {
+  color: #181717;
+  text-align: left;
+}
+
+.botaoDeleteTema {
+  background: #181717 !important;
+  color: #ffffff !important;
+}

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
+import { Typography, Button, Box, Card, CardActions, CardContent, Grid } from "@material-ui/core"
 import './DeletarPostagens.css';
 import Postagem from '../../../models/Postagem';
 import { buscaId, deleteId } from '../../../services/Service';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-
+import { toast } from 'react-toastify'
 function DeletarPostagens() {
   let navigate = useNavigate()
   const { id } = useParams<{ id: string }>()
@@ -17,7 +17,17 @@ function DeletarPostagens() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado para completar a ação')
+      toast.error('Você precisa estar logado para completar a ação', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+
+      });
       navigate("/login")
     }
   })
@@ -43,33 +53,45 @@ function DeletarPostagens() {
         'Authorization': token
       }
     })
-    alert('Postagem excluída com sucesso')
+    toast.success('Postagem excluída com sucesso', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "colored",
+
+    });
   }
   function nao() {
     navigate('/posts')
   }
   return (
     <>
-      <Box m={2}>
-        <Card variant='outlined'>
-          <CardContent>
-            <Box justifyContent='center'>
-              <Typography color='textSecondary' gutterBottom>Deseja deletar a postagem?</Typography>
-              <Typography color='textSecondary'>{posts?.titulo}</Typography>
-            </Box>
-          </CardContent>
-          <CardActions>
-            <Box display='flex' justifyContent="start" ml={1.0} mb={2}>
-              <Box mx={2}>
-                <Button variant='contained' className='' size='large' color='primary' onClick={sim} >Sim</Button>
+      <Grid xs={12} className='Gridzao'>
+        <Box >
+          <Card className='cardbackDelete'>
+            <CardContent>
+              <Box justifyContent='center'>
+                <Typography className='textosDelete' gutterBottom>Deseja deletar a postagem?</Typography>
+                <Typography className='textosDelete' >{posts?.titulo}</Typography>
               </Box>
-              <Box mx={2}>
-                <Button variant='contained' className='' size='large' color='secondary' onClick={nao}>Não</Button>
+            </CardContent>
+            <CardActions>
+              <Box display='flex' justifyContent="start" ml={1.0} mb={2}>
+                <Box mx={2} >
+                  <Button className="botaoDelete" variant='contained' size='large' color='primary' onClick={sim} >Sim</Button>
+                </Box>
+                <Box mx={2} className="botaoSimDelete">
+                  <Button className="botaoDelete" variant='contained' size='large' color='secondary' onClick={nao}>Não</Button>
+                </Box>
               </Box>
-            </Box>
-          </CardActions>
-        </Card>
-      </Box>
+            </CardActions>
+          </Card>
+        </Box>
+      </Grid>
     </>
 
   )
