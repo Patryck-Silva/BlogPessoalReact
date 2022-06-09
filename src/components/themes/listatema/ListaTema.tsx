@@ -48,42 +48,44 @@ function ListaTema() {
   }, [temas.length])
 
   return (
-    <>
-      {
-        //map percorre o array temas,e dps cria um objeto tema no qual pega a descricao dele
-        temas.map(tema => (
-          <Box className='backBox'>
-            <Card className='cardback'>
-              <CardMedia component="img" height="194" image="https://i.imgur.com/DmMY4ho.png" alt="Paella dish" />
-              <CardContent>
-                <Typography className='textos' >Tema</Typography>
-                <Typography className='textos' variant="h5" component="h2">
-                  {tema.descricao}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5} >
-                  <Link to={`/formulariotema/${tema.id}`} className="text-decorator-none">
-                    <Box >
-                      <Button variant="contained" className="botaoAtualizarTema" size='small'  >
-                        atualizar
-                      </Button>
-                    </Box>
-                  </Link>
-                  <Link to={`/deletartema/${tema.id}`} className="text-decorator-none">
-                    <Box >
-                      <Button variant="contained" size='small' className='botaoDeletar'>
-                        deletar
-                      </Button>
-                    </Box>
-                  </Link>
-                </Box>
-              </CardActions>
-            </Card>
-          </Box>
-        ))
-      }
-    </>
+    <Box className='boxFragmentTema'>
+      <>
+        {
+          //map percorre o array temas,e dps cria um objeto tema no qual pega a descricao dele
+          temas.map(tema => (
+            <Box className='backBox'>
+              <Card className='cardback'>
+                <CardMedia component="img" height="194" image="https://i.imgur.com/wXZMg1B.png" alt="Paella dish" />
+                <CardContent>
+                  <Typography className='textos' >Tema</Typography>
+                  <Typography className='textos' variant="h5" component="h2">
+                    {tema.descricao}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Box display="flex" justifyContent="center" mb={1.5} >
+                    <Link to={`/formulariotema/${tema.id}`} className="text-decorator-none">
+                      <Box >
+                        <Button variant="contained" className="botaoAtualizarTema" size='small'  >
+                          atualizar
+                        </Button>
+                      </Box>
+                    </Link>
+                    <Link to={`/deletartema/${tema.id}`} className="text-decorator-none">
+                      <Box >
+                        <Button variant="contained" size='small' className='botaoDeletar'>
+                          deletar
+                        </Button>
+                      </Box>
+                    </Link>
+                  </Box>
+                </CardActions>
+              </Card>
+            </Box>
+          ))
+        }
+      </>
+    </Box>
   );
 }
 

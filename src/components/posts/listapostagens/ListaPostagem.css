@@ -6,6 +6,11 @@
   color: #181717;
 }
 
+.BoxFragmentPostagem {
+  display: flex;
+  height: calc(100vh - 105px - 55px);
+}
+
 .subtitulo {
   color: #181717;
   font-size: 20px !important;
@@ -32,14 +37,13 @@
   background: #e0e0e0 !important;
   box-shadow: 5px 5px 10px #5a5a5a,
     -5px -5px 10px #ffffff !important;
-  border: 1px solid #181717 !important;
   margin-top: 30px !important;
   margin-right: 50px;
-  width: 100vw;
+  width: 400px;
 }
 
 .botaoPosts {
-
   background: #181717 !important;
   color: #ffffff !important;
+  border: 1px solid #000 !important;
 }

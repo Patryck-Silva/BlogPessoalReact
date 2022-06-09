@@ -6,7 +6,10 @@ body {
 
 }
 
-
+.boxFragmentTema {
+  display: flex;
+  height: calc(100vh - 105px - 55px);
+}
 
 .backBox {
   padding-left: 50px;
@@ -14,11 +17,12 @@ body {
 
 .cardback {
   border-radius: 18px !important;
-  background: #e0e0e0 !important;
+  background: #181717 !important;
   box-shadow: 5px 5px 10px #5a5a5a,
     -5px -5px 10px #ffffff !important;
   margin-top: 30px !important;
   margin-right: 50px;
+  width: 400px;
 }
 
 
@@ -27,17 +31,18 @@ body {
 }
 
 .botaoAtualizarTema {
-  background: #181717 !important;
+  background: #232525 !important;
   color: #ffffff !important;
+  border: 1px solid #f1f2f6 !important;
 }
 
 .botaoDeletar {
-  background: #181717 !important;
+  background: #232525 !important;
   margin-left: 10px !important;
-
+  border: 1px solid #f1f2f6 !important;
 }
 
 .textos {
-  color: #181717;
+  color: #fff;
   text-align: left;
 }

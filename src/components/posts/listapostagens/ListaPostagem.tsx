@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Box, Card, CardActions, CardContent, Button, Typography, CardMedia } from '@material-ui/core';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import './ListaPostagem.css';
 import Postagem from '../../../models/Postagem';
@@ -53,65 +53,66 @@ function ListaPostagem() {
       }
     }
     );
+    getPost()
 
-    back()
   }
-  function back() {
-    navigate('/posts')
-  }
+
   return (
-    <>
-      {
-        posts.map(post => (
-          <Box className='backBoxPosts' >
-            <Card variant="outlined" className='cardBackHome'>
-              <CardContent>
-                <Typography className="subtitulo" gutterBottom>
-                  Postagens:
-                </Typography>
-                <Typography className='textosCard' variant="h5" component="h2">
-                  {post.titulo}
-                </Typography>
-                <Typography className='subtitulo' variant="body2" component="p">
-                  Conteúdo:
-                </Typography>
-                <Typography className='textosCard' variant="body2" component="p">
-                  {post.texto}
-                </Typography>
-                <Typography className='subtitulo' variant="body2" component="p">
-                  Tema:
-                </Typography>
-                <Typography className='textosCard' variant="body2" component="p">
-                  {post.tema?.descricao}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Box className='botaoBox' mb={1.5}>
-                  <Link to={`/formulariopostagem/${post.id}`} className="text-decorator-none" >
+    <Box className='BoxFragmentPostagem'>
+      <>
+        {
+          posts.map(post => (
+            <Box className='backBoxPosts' >
+              <Card variant="outlined" className='cardBackHome'>
+                <CardMedia component="img" height="194" image="https://i.imgur.com/IlRe49t.jpg" alt="Paella dish" />
+                <CardContent>
+                  <Typography className="subtitulo" gutterBottom>
+                    Postagens:
+                  </Typography>
+                  <Typography className='textosCard' variant="h5" component="h2">
+                    {post.titulo}
+                  </Typography>
+                  <Typography className='subtitulo' variant="body2" component="p">
+                    Conteúdo:
+                  </Typography>
+                  <Typography className='textosCard' variant="body2" component="p">
+                    {post.texto}
+                  </Typography>
+                  <Typography className='subtitulo' variant="body2" component="p">
+                    Tema:
+                  </Typography>
+                  <Typography className='textosCard' variant="body2" component="p">
+                    {post.tema?.descricao}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Box className='botaoBox' mb={1.5}>
+                    <Link to={`/formulariopostagem/${post.id}`} className="text-decorator-none" >
+                      <Box mx={1}>
+                        <Button color="secondary" variant="contained" size='small' className='botaoPosts'  >
+                          atualizar
+                        </Button>
+                      </Box>
+                    </Link>
+                    <Link to={`/deletarpostagem/${post.id}`} className="text-decorator-none">
+                      <Box mx={1}>
+                        <Button variant="contained" size='small' className='botaoPosts'>
+                          deletar
+                        </Button>
+                      </Box>
+                    </Link>
                     <Box mx={1}>
-                      <Button color="secondary" variant="contained" size='small' className='botaoPosts'  >
-                        atualizar
-                      </Button>
+                      <Button onClick={() => { curtidas(post.id) }} ><ThumbUpIcon color='primary'></ThumbUpIcon></Button>
+                      <Typography style={{ color: 'black' }} align='center' variant="body2" component="p"> {post.curtir}</Typography>
                     </Box>
-                  </Link>
-                  <Link to={`/deletarpostagem/${post.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' className='botaoPosts'>
-                        deletar
-                      </Button>
-                    </Box>
-                  </Link>
-                  <Box mx={1}>
-                    <Button onClick={() => { curtidas(post.id) }} ><ThumbUpIcon color='primary'></ThumbUpIcon></Button>
-                    <Typography style={{ color: 'black' }} align='center' variant="body2" component="p"> {post.curtir}</Typography>
                   </Box>
-                </Box>
-              </CardActions>
-            </Card>
-          </Box>
-        ))
-      }
-    </>
+                </CardActions>
+              </Card>
+            </Box>
+          ))
+        }
+      </>
+    </Box>
   )
 }
 
