@@ -4,16 +4,16 @@
 /* cor de fundo da navbar */
 .back {
   background: #181717 !important;
-  box-shadow: 0px 3px 20px 0px #e5989b !important;
+  box-shadow: 0px 3px 20px 0px #370617 !important;
   backdrop-filter: blur(4px) !important;
-  border-bottom: 1px solid #e5989b !important;
+  border-bottom: 1px solid #370617 !important;
 }
 
 /* Posicaos dos itens na navbar */
 .positionItem {
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end
+  align-items: flex-end;
 }
 
 /* invertendo a posição dos items na navbar */
@@ -32,11 +32,11 @@
 
 .imagem:hover {
   opacity: 0.3;
-  -webkit-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  transform: scale(0.8);
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
+  -webkit-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  transform: scale(0.6);
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
 }
 
 
@@ -45,27 +45,27 @@
   font-family: 'Amatic SC', cursive !important;
   font-size: 28px !important;
   color: #fff;
+  transition: all 0.7s;
 }
 
 .span:hover {
-  color: #e5989b;
+  color: #d00000 !important;
+
+}
+
+.textItem {
+  padding-right: 10px;
+  transition: all 0.7s;
 }
 
 .textItem:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-
-}
-
-/* quando passa o mouse fica pointrer */
-.textItem {
-  cursor: pointer;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 
 }
 
 /* Deixa o link to sem sublinhado */
 .textDecorationNone {
   text-decoration: none;
-
 }

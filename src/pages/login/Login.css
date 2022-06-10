@@ -61,4 +61,12 @@
 .botaoLogar {
   background-color: #e5989b !important;
   font-family: 'Amatic SC', cursive !important;
+  transition: all 0.5s !important;
+}
+
+.botaoLogar:hover {
+  box-shadow:
+    3px -3px 0px #181717 !important;
+  -webkit-transform: translateX(6px);
+  transform: translateX(6px);
 }

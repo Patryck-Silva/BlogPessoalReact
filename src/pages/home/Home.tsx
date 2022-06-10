@@ -38,7 +38,7 @@ function Home() {
             <Box>
               <Typography className='texto' gutterBottom >Seja bem vindo a Blossom!</Typography>
               <Typography gutterBottom className='text2' >expresse seus pensamentos sobre animes e músicas nesta rede social!</Typography>
-              <img src="https://i.imgur.com/BCkA1gx.png" width='90px' height='90px' alt="" />
+              <img src="https://i.imgur.com/N6srZXj.png" width='90px' height='90px' alt="" />
             </Box>
           </Box>
           <Box >
@@ -50,8 +50,7 @@ function Home() {
           </Box>
         </Grid>
         <Grid item xs={6}>
-          <img src="https://i.imgur.com/IYCSulH.gif" alt="" width="500px" height="500px" />
-          <img src="https://i.imgur.com/IYCSulH.gif" alt="" />
+          <img className='imagemGrid' src="https://i.imgur.com/NFzCsD0.png" alt="" width="700px" height="700px" />
         </Grid>
         <Grid container xs={12} >
           <TabPostagem />

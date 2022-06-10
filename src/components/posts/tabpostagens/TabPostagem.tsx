@@ -15,7 +15,6 @@ function TabPostagem() {
       <TabContext value={value}>
         <AppBar position="static">
           <Tabs centered className='header' onChange={handleChange}>
-
             <Tab className='tabText' label="Sobre nós" value="2" />
           </Tabs>
         </AppBar>

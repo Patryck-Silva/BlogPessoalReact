@@ -2,10 +2,10 @@
 
 .gridFooter {
   background: #181717 !important;
-  box-shadow: 0 8px 32px 8px #e5989b !important;
+  box-shadow: 0 8px 32px 8px #370617 !important;
   backdrop-filter: blur(4px) !important;
   -webkit-backdrop-filter: blur(4px) !important;
-  border-top: 1px solid #e5989b !important;
+  border-top: 1px solid #370617 !important;
   display: flex;
   justify-content: flex-end !important;
   align-items: center;
@@ -15,8 +15,12 @@
 
 .igIcon {
   padding-top: 15px;
-  color: #e5989b !important;
+  color: #fff !important;
+  transition: all 0.7s;
+}
 
+.igIcon:hover {
+  color: #370617 !important;
 }
 
 /* .icon {

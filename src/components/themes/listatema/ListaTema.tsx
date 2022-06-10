@@ -55,7 +55,7 @@ function ListaTema() {
           temas.map(tema => (
             <Box className='backBox'>
               <Card className='cardback'>
-                <CardMedia component="img" height="194" image="https://i.imgur.com/wXZMg1B.png" alt="Paella dish" />
+                <CardMedia component="img" height="194" image='https://wallpaperaccess.com/full/4410846.png' alt="Paella dish" />
                 <CardContent>
                   <Typography className='textos' >Tema</Typography>
                   <Typography className='textos' variant="h5" component="h2">

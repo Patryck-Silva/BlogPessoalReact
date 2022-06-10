@@ -9,7 +9,17 @@ import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify'
 function ListaPostagem() {
+
   const [posts, setPosts] = useState<Postagem[]>([])
+
+  const [post, setPost] = useState<Postagem>({
+    id: 0,
+    titulo: "",
+    texto: "",
+    data: "",
+    curtir: 0,
+    tema: null
+  })
 
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
@@ -34,6 +44,16 @@ function ListaPostagem() {
     }
   }, [token])
 
+  async function curtidas(id: number) {
+    await put(`/postagens/curtir/${id}`, post, setPost, {
+      headers: {
+        'Authorization': token
+      }
+    }
+    );
+    getPost()
+  }
+
   async function getPost() {
     await busca("/postagens", setPosts, {
       headers: {
@@ -41,21 +61,10 @@ function ListaPostagem() {
       }
     })
   }
+
   useEffect(() => {
     getPost()
   }, [posts.length])
-
-
-  async function curtidas(id: number) {
-    await put(`/postagens/curtir/${id}`, posts, setPosts, {
-      headers: {
-        'Authorization': token
-      }
-    }
-    );
-    getPost()
-
-  }
 
   return (
     <Box className='BoxFragmentPostagem'>
@@ -64,7 +73,7 @@ function ListaPostagem() {
           posts.map(post => (
             <Box className='backBoxPosts' >
               <Card variant="outlined" className='cardBackHome'>
-                <CardMedia component="img" height="194" image="https://i.imgur.com/IlRe49t.jpg" alt="Paella dish" />
+                <CardMedia component="img" height="194" image="https://cutewallpaper.org/21/junji-ito-wallpaper/Junji-Ito-Manga-Anime-Comparison-Mood-board-Junji-.jpg" alt="Paella dish" />
                 <CardContent>
                   <Typography className="subtitulo" gutterBottom>
                     Postagens:

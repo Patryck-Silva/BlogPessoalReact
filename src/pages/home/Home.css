@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 
-
 /* Grid da box transparente com texto */
 .grid1 {
   display: flex;
@@ -21,9 +20,8 @@
   /* coloração */
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  border: 1px groove #e5989b;
-  box-shadow: 5px 5px 10px #583d3e,
-    -5px -5px 10px #e5989b !important;
+  border: 1px groove #47071e;
+
   /* tamanho da box */
   height: 300px;
   /* alinhamento do texto */
@@ -55,15 +53,31 @@
 .butao {
   margin-top: 20px !important;
   border-radius: 10px !important;
-  border: 1px solid #e5989b !important;
+  border: 1px groove #47071e !important;
 }
 
-/* Classe do botao cria pelo mui */
+.butao:hover,
+.butao:focus {
+  box-shadow: inset 0 0 0 2em #47071e !important;
+}
+
+/* Classe do botao criada pelo mui */
 .MuiButton-root {
   color: #ffffff !important;
   /* cor do texto do botao  */
   font-family: 'Amatic SC', cursive !important;
   font-size: 23px !important;
+}
+
+.imagemGrid {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.imagemGrid:hover {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.2);
+  cursor: none;
 }
 
 /* É o Grid maior por trás dos dois */
