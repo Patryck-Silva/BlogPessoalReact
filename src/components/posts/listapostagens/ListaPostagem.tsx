@@ -111,7 +111,7 @@ function ListaPostagem() {
                       </Box>
                     </Link>
                     <Box mx={1}>
-                      <Button onClick={() => { curtidas(post.id) }} ><ThumbUpIcon color='primary'></ThumbUpIcon></Button>
+                      <Button onClick={() => { curtidas(post.id) }} ><ThumbUpIcon color='action'></ThumbUpIcon></Button>
                       <Typography style={{ color: 'black' }} align='center' variant="body2" component="p"> {post.curtir}</Typography>
                     </Box>
                   </Box>

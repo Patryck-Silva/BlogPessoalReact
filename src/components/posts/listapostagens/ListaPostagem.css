@@ -7,13 +7,10 @@
 }
 
 .BoxFragmentPostagem {
-
   display: flex;
-  justify-content: flex-end;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
   align-items: flex-start;
   padding-bottom: 40px;
+  min-height: 100vh;
 }
 
 .subtitulo {

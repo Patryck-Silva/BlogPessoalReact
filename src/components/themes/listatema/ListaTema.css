@@ -13,9 +13,10 @@ body {
   justify-content: center;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   padding-bottom: 40px;
-  width: calc(100vw);
+  width: 100vw;
+  min-height: 100vh;
 }
 
 .backBox {

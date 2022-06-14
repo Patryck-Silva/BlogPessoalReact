@@ -2,9 +2,16 @@
   color: #f0eeee !important;
 }
 
+.tabTexto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .tabText {
   font-size: 16px !important;
   font-weight: bold !important;
+
 }
 
 .header {

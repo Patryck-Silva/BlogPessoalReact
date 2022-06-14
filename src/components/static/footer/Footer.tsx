@@ -17,7 +17,7 @@ function Footer() {
   if (token !== '') {
     footerComponent = <Grid container >
       <Grid className='gridFooter' item xs={12}>
-        <Box paddingRight={4}>
+        <Box paddingLeft={1}>
           <a href="https://github.com/Patryck-Silva" target="_blank" style={{ marginRight: "10px" }} rel="noreferrer">
             <GitHubIcon className='igIcon' fontSize='large'></GitHubIcon>
           </a>
